@@ -14,13 +14,13 @@ return new class extends Migration
     public function up()
     {
         Schema::create('usuarios', function (Blueprint $table) {
-            $table->string('login', 45)->primary();
+            $table->string('login', 45);
             $table->string('senha', 45);
             $table->string('nome', 45);
             $table->string('skype', 45);
             $table->string('email', 45);
             $table->string('telefone', 45);
-            $table->integer('filial');
+            $table->integer('filial')->unsigned();
 
             $table->foreign('filial')->references('id_filial')->on('filiais');
         });

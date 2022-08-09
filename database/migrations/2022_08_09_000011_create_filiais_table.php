@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('filiais', function (Blueprint $table) {
-            $table->increments('id_filial')->primary();
+            $table->increments('id_filial');
             $table->string('nome', 45);
         });
     }

@@ -14,9 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::create('patrimonios', function (Blueprint $table) {
-            $table->increments('id_pat')->primary();
+            $table->increments('id_pat');
             $table->boolean('ativo');
-            $table->bigInteger('categoria');
+            $table->integer('categoria')->unsigned();
             $table->string('descricao', 45);
             $table->date('data');
             $table->bigInteger('fornecedor');

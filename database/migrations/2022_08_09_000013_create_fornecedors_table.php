@@ -14,14 +14,14 @@ return new class extends Migration
     public function up()
     {
         Schema::create('fornecedors', function (Blueprint $table) {
-            $table->increments('id_for')->primary();
+            $table->increments('id_for');
             $table->boolean('ativo');
             $table->string('nome', 45);
             $table->string('razao', 45);
             $table->string('cnpj', 45);
             $table->string('endereco', 45);
             $table->string('cidade', 45);
-            $table->integer('uf');
+            $table->integer('uf')->unsigned();
             $table->string('contato', 45);
             $table->integer('cep');
             $table->string('email', 45);
