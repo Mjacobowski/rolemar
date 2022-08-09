@@ -14,8 +14,12 @@ return new class extends Migration
     public function up()
     {
         Schema::create('custos', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->increments('id_cus')->primary();
+            $table->integer('patrimonio');
+            $table->integer('parcela_total');
+            $table->integer('parcela_atual');
+            $table->decimal('valor', $precision = 8, $scale = 2);
+            $table->boolean('pago');
         });
     }
 

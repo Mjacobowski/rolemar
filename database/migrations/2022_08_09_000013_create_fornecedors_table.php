@@ -14,8 +14,20 @@ return new class extends Migration
     public function up()
     {
         Schema::create('fornecedors', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->increments('id_for')->primary();
+            $table->boolean('ativo');
+            $table->string('nome', 45);
+            $table->string('razao', 45);
+            $table->string('cnpj', 45);
+            $table->string('endereco', 45);
+            $table->string('cidade', 45);
+            $table->integer('uf');
+            $table->string('contato', 45);
+            $table->integer('cep');
+            $table->string('email', 45);
+            $table->string('telefone', 45);
+
+            $table->foreign('uf')->references('id_uf')->on('ufs');
         });
     }
 

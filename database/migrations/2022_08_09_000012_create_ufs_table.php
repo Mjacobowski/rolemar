@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('ufs', function (Blueprint $table) {
-            $table->increments('id_uf');
+            $table->increments('id_uf')->primary();
             $table->string('sigla', 2);
         });
     }
